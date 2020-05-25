@@ -13,7 +13,7 @@ const session = require('express-session');
 const MongoStore = require('connect-mongo')(session);
 
 mongoose
-  .connect(process.env.MONGODB_URI, {
+  .connect(process.env.MLAB_URI, {
     useNewUrlParser: true,
     useUnifiedTopology: true
   })
