@@ -1,0 +1,33 @@
+<div class="card text-center">
+    <div class="card-body">
+        <div class="container">
+            <div class="row">
+                <div class="col">
+                    <img src="{{this.image.current.preview}}" class="card-img-top" alt="web-cam-preview">
+                </div>
+                <div class="col">
+                    <div class="row"></div>
+                    <h5 class="card-title">{{this.title}}</h5>
+                    <p class="card-text">Country: {{this.location.country}}<br>Continent: {{this.location.continent}}
+                    </p>
+                    <a href="/camera-player/{{this.id}}" class="btn btn-primary">Access Camera</a>
+                </div>
+                <div class="card-footer text" style="color:green">
+                    {{this.status}}
+                    <div class="card-footer text-muted">
+                        <em>{{this.statistics.views}} views</em>
+                    </div>
+                    {{!-- <form action="/addCamera" method="POST"> --}}
+                    <form class="fav-form" method="POST" action="/removeCamera">
+                        <button class="remove-fav-button" type="submit" name="cameraid" value={{this.id}}><i
+                                class="nc-icon nc-fav-remove"></i><span>Remove from favorites</span></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+        <p class="card-text"><a href={{this.location.wikipedia}} target="_blank">Learn more about this
+                place</a></p>
+    </div>
+    <div>
+    </div>
+</div>

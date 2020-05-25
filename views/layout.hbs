@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous">
+
+  <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+
+  <link href="https://use.fontawesome.com/releases/v5.0.6/css/all.css" rel="stylesheet">
+
+
+  <!-- CSSMap STYLESHEET - CONTINENTS -->
+  <link rel="stylesheet" type="text/css" href="cssmap-continents/cssmap-continents.css" media="screen" />
+  <link rel="stylesheet" href="/stylesheets/style.css" />
+  <link href="/stylesheets/dashboard.css" rel="stylesheet" />
+  <script type="text/javascript" src="/javascripts/script.js"></script>
+
+  <title>{{title}}</title>
+</head>
+
+
+<body>
+
+  {{{body}}}
+
+
+  <footer id="sticky-footer" class="py-4 bg-dark text-white-50">
+    <div class="container text-center">
+      <small>Copyright &copy; Wilsco</small><br>
+      <small class="text-right">Built by Francisco Horák and Wilson Cruz | Powered by windy.com
+      </small>
+    </div>
+  </footer>
+</body>
+
+<!--Dashboard JS-->
+<script type="text/javascript" src="/javascripts/dashboard.js"></script>
+
+
+<!-- jQuery -->
+<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<!-- CSSMap SCRIPT -->
+<script type="text/javascript" src="https://cssmapsplugin.com/5/jquery.cssmap.min.js"></script>
+
+<script type="text/javascript">
+  $(document).ready(function () {
+
+    // CSSMap;
+    $("#map-continents").CSSMap({
+      "size": 1450,
+      "mapStyle": "blue",
+      "cities": true,
+      "tooltips": "floating-top-center",
+      "responsive": "auto",
+      "fitHeight": false,
+      "tapOnce": true,
+      "navigation": {
+        "enable": false,
+        "label": "",
+      },
+      "authorInfo": false
+    });
+    // END OF THE CSSMap;
+
+  });
+  // to display the date in the dashboard
+
+  document.getElementById("date").innerHTML = new Date().toUTCString("m");
+
+</script>
+
+</html>

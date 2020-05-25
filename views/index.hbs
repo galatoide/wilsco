@@ -1,0 +1,46 @@
+<header>
+    <nav class=" my-nav navbar navbar-light navbar-expand-lg ">
+        <div class="container">
+            <a class="navbar-brand-index" href="/signup">WILSCO</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ml-auto">
+                    <form class="form-inline pull-md-right" action="/dashboard" method="POST">
+                        {{#if errorMessage}}
+                        <div class="error-message">{{ errorMessage }}</div>
+                        {{/if}}
+                        <div class="input-box">
+                            <input id="email" type="text" class="form-control" name="username" placeholder="username"
+                                autocomplete="off">
+                        </div>
+                        <input id="password" type="password" class="form-control" name="password"
+                            placeholder="Password">
+                        <div class="input-box">
+                            <button type="submit" class="btn btn-outline-secondary log-in-btn"><i
+                                    class="nc-icon nc-lock-circle-open"></i>Login</button>
+                        </div>
+                    </form>
+                </ul>
+            </div>
+        </div>
+        </div>
+    </nav>
+    <div class="overlay"></div>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="/videos/coverr-vessel-outside--1571151379869.mp4" type="video/mp4">
+    </video>
+    <div class="container h-100">
+        <div class="d-flex h-50 text-center align-items-center">
+            <div class="w-100 text-white">
+                <h3>The World's Largest Collection of Live Cameras,<br>For Free.</h3>
+            </div>
+        </div>
+        <div class="container">
+            <p class="lead mb-0 h-50">Don't have an account yet?<br>
+                <a type="button" class="btn btn-outline-secondary" href="/signup">Get Access</a>
+        </div>
+    </div>
+</header>

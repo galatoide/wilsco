@@ -1,0 +1,112 @@
+<div class="wrapper">
+    <div class="sidebar" data-image="../assets/img/sidebar-5.jpg" data-color="blue">
+        <!--
+        Tip 1: You can change the color of the sidebar using: data-color="purple | blue | green | orange | red"
+
+        Tip 2: you can also add an image using data-image tag
+    -->
+        <div class="sidebar-wrapper">
+            {{!-- {{#if currentUser}} --}}
+            <div class="logo">
+                <a href="/dashboard" class="simple-text">
+                    Hi {{user.username}}
+                </a>
+            </div>
+            <div class="avatar-dashboard">
+                <img class="#" src="{{user.imgPath}}" alt="">
+            </div>
+            {{!-- {{/if}} --}}
+            <ul class="nav">
+                <li class="nav-item active">
+                    <a class="nav-link active" href="/dashboard">
+                        <i class="nc-icon nc-planet"></i>
+                        <p>Explore</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="/most-popular">
+                        <i class="nc-icon nc-icon nc-paper-2"></i>
+                        <p>Most Popular</p>
+                    </a>
+                </li>
+                <li>
+                    <a class="nav-link" href="/near-me">
+                        <i class="nc-icon nc-compass-05"></i>
+                        <p>Near me</p>
+                    </a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="/favourites">
+                        <i class="nc-icon nc-favourite-28"></i>
+                        <p>My Favorites</p>
+                    </a>
+                </li>
+                <li class="nav-item active active-pro">
+                    <a class="nav-link active" href="/account">
+                        <p>Settings</p>
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="main-panel">
+        <!-- Navbar -->
+        <nav class="navbar navbar-expand-lg " color-on-scroll="500">
+            <div class="container-fluid">
+                <a class="navbar-brand" href="#pablo">Wilsco</a>
+                <button href="" class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse"
+                    aria-controls="navigation-index" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-bar burger-lines"></span>
+                    <span class="navbar-toggler-bar burger-lines"></span>
+                    <span class="navbar-toggler-bar burger-lines"></span>
+                </button>
+                <div class="collapse navbar-collapse justify-content-end" id="navigation">
+                    <ul class="nav navbar-nav mr-auto">
+                        <li class="nav-item">
+                            <a class="nav-link" onclick="history.go(-1)">
+                                <i class="nc-icon nc-icon nc-stre-left"></i>
+                                <span class="d-lg-none">Back</span>
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="outter_search_box">
+                                <input class="form-control searchbar" type="text" placeholder="Search by Country code"
+                                    name="countryCode">
+                            </div>
+                            {{!-- <a href="#" class="nav-link">
+                                <i class="nc-icon nc-zoom-split"></i>
+                                <span class="d-lg-block">&nbsp;Search</span>
+                            </a> --}}
+                        </li>
+                    </ul>
+                    <ul class="navbar-nav ml-auto">
+                        <li class="nav-item">
+                            <a class="nav-link disabled">
+                                <span id="date" class="no-icon">
+                            </a>
+                        </li>
+                        <li class="nav-item">
+                            <div class="logout-button">
+                                <a class="nav-link" href="/logout">
+                                    <button class="logout-text"><span>Log out</span></button>
+                                </a>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!--Main content code to be written here -->
+        <div id="map-continents">
+            <div class="row">
+                {{#each responseFromApi.data.result.countries}}
+                <div class="col-sm-3">
+                    <div class="category-card">
+                        <a class="btn btn-primary" href="/countries/{{this.id}}">{{this.name}} </a>
+                    </div>
+                </div>
+                {{/each}}
+            </div>
+        </div>
+    </div>
+</div>

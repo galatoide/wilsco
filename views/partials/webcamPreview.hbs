@@ -1,0 +1,18 @@
+<div class="camera-preview">
+  <div class="container">
+    <div class="row">
+      <div class="col">
+        <h3>{{this.title}} | {{this.country}}</h3>
+        {{#if player.live.available}}
+        <br>
+        <h6 style="color: chartreuse;">Livestream Available</h6>
+        {{else}}
+        <h6>A live camera is not available at the moment</h6>
+        {{/if}}
+        <div class="embed-responsive embed-responsive-16by9">
+          <iframe class="embed-responsive-item" src="{{this.player.day.embed}}" allowfullscreen></iframe>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

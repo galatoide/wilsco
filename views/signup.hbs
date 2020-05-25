@@ -1,0 +1,47 @@
+<header>
+    <video playsinline="playsinline" autoplay="autoplay" muted="muted" loop="loop">
+        <source src="/videos/coverr-still-timelapse-circle-highways-1587742334143.mp4" type="video/mp4">
+    </video>
+    <div class="overlay-light"></div>
+    <div class="container vh-100 vw-100">
+        <div class="text-center align-items-center">
+            <div class="text-white">
+                <h3>The World's Largest Collection of Live Cameras,<br><strong>For Free.</strong></h3>
+            </div>
+        </div>
+        <div id="signup-form">
+            <form action="/signup" method="POST">
+                <h1>Sign Up</h1>
+
+                <fieldset>
+                    <legend>Your basic info</legend>
+                    <label for="name">Name:</label>
+                    <input type="text" class="username" name="username" autocomplete="off">
+
+                    <label for="email">Email:</label>
+                    <input type="email" class="email" name="email" autocomplete="off">
+
+                    <label for="password">Password:</label>
+                    <input type="password" class="password" name="password">
+
+                    <label for="gender">Gender:</label>
+                    <input type="radio" class="male" value="male" name="gender"><label for="under_13"
+                        class="light">Male</label>
+                    <input type="radio" class="female" value="female" name="gender"><label for="female"
+                        class="light">Female</label>
+                    <input type="radio" class="other" value="other" name="gender"><label for="other"
+                        class="light">Other</label>
+                </fieldset>
+                {{#if errorMessage}}
+                <div class="error-message">{{ errorMessage }}</div>
+                {{/if}}
+                <div class="container">
+                    <div class="row">
+                        <button type="submit">Create Account</button> <button><a href="/"
+                                style="color: white;">Login</a></button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+</header>
